@@ -17,6 +17,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  ch_flutter_library:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "0535a1f4d8bf09cfc71a7eb4bc43adc6aa4826c1"
+      url: "https://github.com/Chronoss0518/ch_flutter_library"
+    source: git
+    version: "0.0.1"
   characters:
     dependency: transitive
     description:
@@ -186,3 +195,4 @@ packages:
     version: "0.1.4-beta"
 sdks:
   dart: ">=3.1.2 <4.0.0"
+  flutter: ">=1.17.0"

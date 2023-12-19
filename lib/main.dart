@@ -1,3 +1,4 @@
+import 'package:ch_flutter_library/widget/scene_manager.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,18 +17,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: "title"),
+      home: SceneManager(StartScene()),
     );
   }
 }
 
-/*
 class StartScene extends BaseScene {
   @override
   void init() {
     setAppBar(AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text("Title"),
+      backgroundColor: Theme.of(context!).colorScheme.inversePrimary,
+      title: Center(child: Text("Title")),
     ));
   }
 
@@ -55,7 +55,7 @@ class StartScene extends BaseScene {
     );
   }
 }
-*/
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
