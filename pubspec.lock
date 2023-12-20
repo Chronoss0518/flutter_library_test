@@ -22,7 +22,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "0535a1f4d8bf09cfc71a7eb4bc43adc6aa4826c1"
+      resolved-ref: "1369de3ab8a7cab83bb006560a0d5da139decc25"
       url: "https://github.com/Chronoss0518/ch_flutter_library"
     source: git
     version: "0.0.1"

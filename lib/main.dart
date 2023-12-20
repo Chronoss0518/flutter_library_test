@@ -24,18 +24,30 @@ class MyApp extends StatelessWidget {
 
 class StartScene extends BaseScene {
   @override
-  void init() {
+  void init({SaveData? sendData}) {
     setAppBar(AppBar(
       backgroundColor: Theme.of(context!).colorScheme.inversePrimary,
       title: Center(child: Text("Title")),
     ));
+    repaint(() {});
+  }
+
+  int testNumber = 0;
+
+  @override
+  void update() {
+    repaint(() {
+      tmpUpdate();
+    });
   }
 
   @override
-  void update() {}
-
-  @override
   void release() {}
+
+  void tmpUpdate() {
+    testNumber++;
+    testNumber %= 100;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +59,7 @@ class StartScene extends BaseScene {
             'You have pushed the button this many times:',
           ),
           Text(
-            'Test',
+            'Test:' + testNumber.toString(),
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ],
