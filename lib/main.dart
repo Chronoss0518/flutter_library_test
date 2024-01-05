@@ -1,5 +1,7 @@
-import 'package:ch_flutter_library/widget/scene_manager.dart';
+
 import 'package:flutter/material.dart';
+import 'package:ch_flutter_library/widget/components/image_drawer.dart';
+import 'package:ch_flutter_library/widget/scene_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,6 +61,7 @@ class StartScene extends BaseScene {
           DrawText(
             'You have pushed the button this many times:',
           ),
+          ImageDrawer("resource/image/test_image.png",width: 100,height:100,),
           Container(
             margin: EdgeInsets.only(left: 100.0),
             color: Colors.red,
