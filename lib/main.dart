@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:ch_flutter_library/widget/components/image_drawer.dart';
+import 'package:ch_flutter_library/widget/components/image_some_drawer.dart';
 import 'package:ch_flutter_library/widget/scene_manager.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +27,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
 class StartScene extends BaseScene {
+  ImageSomeDrawerController controller = ImageSomeDrawerController();
+  
   @override
   void init({SaveData? sendData}) {
     setAppBar(AppBar(
@@ -38,6 +45,12 @@ class StartScene extends BaseScene {
 
   @override
   void update() {
+    if(testNumber == 0)
+    {
+      controller.drawLeft = (controller.drawLeft - 100) % controller.baseHeight;
+      controller.drawTop = (controller.drawTop - 100) % controller.baseHeight;
+    }
+    controller.update();
     repaint(() {
       tmpUpdate();
     });
@@ -61,7 +74,7 @@ class StartScene extends BaseScene {
           DrawText(
             'You have pushed the button this many times:',
           ),
-          ImageDrawer("resource/image/test_image.png",width: 100,height:100,),
+          ImageSomeDrawer("resource/image/test_image.png",controller,width: 500,height:500,imageWidth: 1000,imageHeight:1000,),
           Container(
             margin: EdgeInsets.only(left: 100.0),
             color: Colors.red,
