@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:ch_flutter_library/widget/components/image_some_drawer.dart';
 import 'package:ch_flutter_library/widget/scene_manager.dart';
 
-class StartScene extends BaseScene {
+class StartScene extends BaseScene
+{
   ImageSomeDrawerController controller = ImageSomeDrawerController();
 
   @override
-  void init({SaveData? sendData}) {
+  void init({SaveData? sendData})
+  {
     update = updateMethod;
 
     setAppBar(AppBar(
@@ -20,7 +22,8 @@ class StartScene extends BaseScene {
   int testNumber = 0;
 
   @override
-  void updateMethod() {
+  void updateMethod()
+  {
     if (testNumber == 0) {
       controller.drawLeft = (controller.drawLeft - 100) % controller.baseHeight;
       controller.drawTop = (controller.drawTop - 100) % controller.baseHeight;
@@ -34,13 +37,15 @@ class StartScene extends BaseScene {
   @override
   void release() {}
 
-  void tmpUpdate() {
+  void tmpUpdate()
+  {
     testNumber++;
     testNumber %= 100;
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     MediaQuery.of(context).size;
     return Center(
       child: Column(
@@ -71,7 +76,8 @@ class StartScene extends BaseScene {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget
+{
   const MyHomePage({super.key, required this.title});
 
   final String title;
@@ -80,27 +86,32 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class DrawText extends StatelessWidget {
+class DrawText extends StatelessWidget
+{
   DrawText(this.text, {super.key});
 
   final String text;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Text(text);
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+{
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _incrementCounter()
+  {
     setState(() {
       _counter++;
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
