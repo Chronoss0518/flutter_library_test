@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ch_flutter_library/widget/scene_manager.dart';
+import 'package:library_test/canvas_test.dart';
 import 'start_scene.dart';
 
 enum TestType
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const StartWidget(TestType.baseSceneTest),
+      home: const StartWidget(TestType.canvasTest),
     );
   }
 }
@@ -50,7 +51,7 @@ class _State extends State<StartWidget>
       case TestType.baseSceneTest:
         return SceneManager(StartScene());
       case TestType.canvasTest:
+        return CanvasTest();
     }
-    return SceneManager(StartScene());
   }
 }
